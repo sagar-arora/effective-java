@@ -1,0 +1,13 @@
+Item 10: Obey the general contract when overriding equals
+equals method is inherited from Object class. equals method from object class established equality between two objects
+only when two references of the object are equal. 
+for example:  
+Object object1 = new Object();
+Object object2 = new Object();
+object1.equals(object2); // returns false
+object1 = object2
+object1.equals(object2); // returns true
+
+
+There are casese when we want that behavior, but there are instances when we don't want, particularly value objects 
+such as Integer or String or custom class such as Student.
