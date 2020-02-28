@@ -10,6 +10,7 @@ public class Student {
     this.lastName = lastName;
   }
   
+  @Override
   public boolean equals(Object obj) {
     if(this == obj) {
       return true;
@@ -21,6 +22,7 @@ public class Student {
     return this.rollNumber == rollNumber && this.firstName == firstName && this.lastName == lastName;
   }
   
+  @Override
   public int hashCode() {
     int hash = Integer.hashCode(rollNumber);
     hash = 31 * hash + String.hashCode(firstName);
