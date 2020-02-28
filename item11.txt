@@ -1,0 +1,14 @@
+Item 11: Always override hashcode when overriding equals method
+
+a) when the hashcode method is inoved an object repeatedly it should return the same value, given the equals method is not 
+changed between the executions.
+b) If two objects are equal according to equals method then callnig hashcode on each of the objects should return the same 
+integer value.
+c) 
+
+The key provision that is violated when you fail to override hashCode is
+the second one: equal objects must have equal hash codes. Two distinct
+instances may be logically equal according to a class’s equals method, but to
+Object’s hashCode method, they’re just two objects with nothing much in
+common. Therefore, Object’s hashCode method returns two seemingly random
+numbers instead of two equal numbers as required by the contract.
