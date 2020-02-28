@@ -1,8 +1,8 @@
 public class Student {
   
   private final long rollNumber;
-  private String firstName;
-  private String lastName;
+  private final String firstName;
+  private final String lastName;
   
   public Student(long rollNumber, String firstName, String lastName) {
     this.rollNumber = rollNumber;
