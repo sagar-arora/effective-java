@@ -29,5 +29,13 @@ public class Student {
     hash = 31 * hash + String.hashCode(lastName);
     return hash;
   }
+  /**
+   * Returns the string representation of this Student. The String consist of the Student's name and 
+   * roll number. for eg. [Student: Sagar Arora rollNumber: 14476353]. 
+   */
+  @Override
+  public String toString() {
+    return "[Student: " + firstName + " " + lastName + " rollNumber: " + rollNumber + "]"; 
+  }
   
 }
