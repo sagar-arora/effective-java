@@ -1,5 +1,9 @@
-public class Student implements Comparable<Student> {
-  
+public final class Student implements Comparable<Student> {
+  enum STATUS {
+    FULL_TIME,
+    PART_TIME;
+  }
+  private final STATUS status;
   private final long rollNumber;
   private final String firstName;
   private final String lastName;
@@ -11,6 +15,12 @@ public class Student implements Comparable<Student> {
     this.rollNumber = rollNumber;
     this.firstName = firstName;
     this.lastName = lastName;
+    status  = STATUS.FULL_TIME;
+  }
+  
+  public Student(long rollNumber, String firstName, String lastName, STATUS status) {
+    this(rollNumber, firstName, lastName);    
+    this.status = status;
   }
   
   @Override
@@ -39,7 +49,7 @@ public class Student implements Comparable<Student> {
    */
   @Override
   public String toString() {
-    return "[Student: " + firstName + " " + lastName + " rollNumber: " + rollNumber + "]"; 
+    return "[Student: " + firstName + " " + lastName + " rollNumber: " + rollNumber + "]";
   }
  
   public int compare(Student student) {
