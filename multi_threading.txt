@@ -1,0 +1,45 @@
+Conditions that can lead to deadlock:
+a. Race Conditions : 
+
+Suppose we have a poem and multiple poets are colloaborating to write a poem together.
+class Poem {
+  String poem;
+  
+  Poem(String poem) {
+    this.poem = poem;
+  }
+  
+  String getPoem() {
+    return poem;
+  }
+  
+  String setPoem(String poem) { 
+    poem = poem;
+  }
+}
+
+class Poet extends Runnable {
+  private Poem poem;
+  
+  public Poet(Poem poem) {
+    this.poem = poem;
+  }
+  
+  void appendPoem(String poem) {
+    String currentPoem = poem.getPoem();
+    String newPoem = currentPoem + poem;
+    poem.setPoem(new Poem);
+  }
+  
+  String prettyPrintPoem() {
+    return poem.getPoem();
+  }
+  
+  public static void main(String[] args) {
+    Poem myPoem = new Poem("Roses are red, skies are blue");
+    Poet poet1 = new Poet(myPoem);
+    Poet poet2 = new Poet(myPoem);
+    poet1.appendPoem("blah blah blah");
+    poet2.appendPoem("Howdy");
+  }
+}
